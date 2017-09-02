@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE2F577A1F5A7B4200F1D2F3 /* QiitaStock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2F57791F5A7B4200F1D2F3 /* QiitaStock.swift */; };
+		CE2F577C1F5A7EAE00F1D2F3 /* QiitaStocksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2F577B1F5A7EAE00F1D2F3 /* QiitaStocksViewController.swift */; };
+		CE2F577F1F5A8BF500F1D2F3 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2F577D1F5A8BF500F1D2F3 /* SwiftyJSON.framework */; };
+		CE2F57801F5A8BF500F1D2F3 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE2F577D1F5A8BF500F1D2F3 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CE2F57811F5A8BF500F1D2F3 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2F577E1F5A8BF500F1D2F3 /* Alamofire.framework */; };
+		CE2F57821F5A8BF500F1D2F3 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE2F577E1F5A8BF500F1D2F3 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CEDDA1CA1F5A77C9007FB546 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDDA1C91F5A77C9007FB546 /* AppDelegate.swift */; };
-		CEDDA1CC1F5A77C9007FB546 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDDA1CB1F5A77C9007FB546 /* ViewController.swift */; };
 		CEDDA1CF1F5A77C9007FB546 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDDA1CD1F5A77C9007FB546 /* Main.storyboard */; };
 		CEDDA1D11F5A77C9007FB546 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEDDA1D01F5A77C9007FB546 /* Assets.xcassets */; };
 		CEDDA1D41F5A77C9007FB546 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDDA1D21F5A77C9007FB546 /* LaunchScreen.storyboard */; };
@@ -33,10 +38,28 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		CE2F57831F5A8BF500F1D2F3 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CE2F57801F5A8BF500F1D2F3 /* SwiftyJSON.framework in Embed Frameworks */,
+				CE2F57821F5A8BF500F1D2F3 /* Alamofire.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		CE2F57791F5A7B4200F1D2F3 /* QiitaStock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QiitaStock.swift; sourceTree = "<group>"; };
+		CE2F577B1F5A7EAE00F1D2F3 /* QiitaStocksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QiitaStocksViewController.swift; sourceTree = "<group>"; };
+		CE2F577D1F5A8BF500F1D2F3 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		CE2F577E1F5A8BF500F1D2F3 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		CEDDA1C61F5A77C9007FB546 /* WebAPIsList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebAPIsList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEDDA1C91F5A77C9007FB546 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CEDDA1CB1F5A77C9007FB546 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CEDDA1CE1F5A77C9007FB546 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CEDDA1D01F5A77C9007FB546 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEDDA1D31F5A77C9007FB546 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,6 +77,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE2F577F1F5A8BF500F1D2F3 /* SwiftyJSON.framework in Frameworks */,
+				CE2F57811F5A8BF500F1D2F3 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +102,8 @@
 		CEDDA1BD1F5A77C9007FB546 = {
 			isa = PBXGroup;
 			children = (
+				CE2F577D1F5A8BF500F1D2F3 /* SwiftyJSON.framework */,
+				CE2F577E1F5A8BF500F1D2F3 /* Alamofire.framework */,
 				CEDDA1C81F5A77C9007FB546 /* WebAPIsList */,
 				CEDDA1DD1F5A77CA007FB546 /* WebAPIsListTests */,
 				CEDDA1E81F5A77CA007FB546 /* WebAPIsListUITests */,
@@ -98,11 +125,12 @@
 			isa = PBXGroup;
 			children = (
 				CEDDA1C91F5A77C9007FB546 /* AppDelegate.swift */,
-				CEDDA1CB1F5A77C9007FB546 /* ViewController.swift */,
+				CE2F577B1F5A7EAE00F1D2F3 /* QiitaStocksViewController.swift */,
 				CEDDA1CD1F5A77C9007FB546 /* Main.storyboard */,
 				CEDDA1D01F5A77C9007FB546 /* Assets.xcassets */,
 				CEDDA1D21F5A77C9007FB546 /* LaunchScreen.storyboard */,
 				CEDDA1D51F5A77C9007FB546 /* Info.plist */,
+				CE2F57791F5A7B4200F1D2F3 /* QiitaStock.swift */,
 			);
 			path = WebAPIsList;
 			sourceTree = "<group>";
@@ -135,6 +163,8 @@
 				CEDDA1C21F5A77C9007FB546 /* Sources */,
 				CEDDA1C31F5A77C9007FB546 /* Frameworks */,
 				CEDDA1C41F5A77C9007FB546 /* Resources */,
+				CE2F57831F5A8BF500F1D2F3 /* Embed Frameworks */,
+				CE2F57871F5A8C8300F1D2F3 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -254,12 +284,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		CE2F57871F5A8C8300F1D2F3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CEDDA1C21F5A77C9007FB546 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEDDA1CC1F5A77C9007FB546 /* ViewController.swift in Sources */,
+				CE2F577C1F5A7EAE00F1D2F3 /* QiitaStocksViewController.swift in Sources */,
+				CE2F577A1F5A7B4200F1D2F3 /* QiitaStock.swift in Sources */,
 				CEDDA1CA1F5A77C9007FB546 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,6 +461,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = WebAPIsList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.twobokoh.ios.WebAPIsList;
@@ -424,6 +477,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = WebAPIsList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.twobokoh.ios.WebAPIsList;
@@ -505,6 +562,7 @@
 				CEDDA1F01F5A77CA007FB546 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CEDDA1F11F5A77CA007FB546 /* Build configuration list for PBXNativeTarget "WebAPIsListTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +571,7 @@
 				CEDDA1F31F5A77CA007FB546 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CEDDA1F41F5A77CA007FB546 /* Build configuration list for PBXNativeTarget "WebAPIsListUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +580,7 @@
 				CEDDA1F61F5A77CA007FB546 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
