@@ -13,6 +13,8 @@
 		CE2F57801F5A8BF500F1D2F3 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE2F577D1F5A8BF500F1D2F3 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CE2F57811F5A8BF500F1D2F3 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2F577E1F5A8BF500F1D2F3 /* Alamofire.framework */; };
 		CE2F57821F5A8BF500F1D2F3 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE2F577E1F5A8BF500F1D2F3 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CE2F57891F5C296C00F1D2F3 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE2F57881F5C296C00F1D2F3 /* ObjectMapper.framework */; };
+		CE2F578A1F5C296C00F1D2F3 /* ObjectMapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE2F57881F5C296C00F1D2F3 /* ObjectMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CEDDA1CA1F5A77C9007FB546 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDDA1C91F5A77C9007FB546 /* AppDelegate.swift */; };
 		CEDDA1CF1F5A77C9007FB546 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDDA1CD1F5A77C9007FB546 /* Main.storyboard */; };
 		CEDDA1D11F5A77C9007FB546 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEDDA1D01F5A77C9007FB546 /* Assets.xcassets */; };
@@ -45,6 +47,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				CE2F578A1F5C296C00F1D2F3 /* ObjectMapper.framework in Embed Frameworks */,
 				CE2F57801F5A8BF500F1D2F3 /* SwiftyJSON.framework in Embed Frameworks */,
 				CE2F57821F5A8BF500F1D2F3 /* Alamofire.framework in Embed Frameworks */,
 			);
@@ -58,6 +61,7 @@
 		CE2F577B1F5A7EAE00F1D2F3 /* QiitaStocksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QiitaStocksViewController.swift; sourceTree = "<group>"; };
 		CE2F577D1F5A8BF500F1D2F3 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		CE2F577E1F5A8BF500F1D2F3 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		CE2F57881F5C296C00F1D2F3 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
 		CEDDA1C61F5A77C9007FB546 /* WebAPIsList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebAPIsList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEDDA1C91F5A77C9007FB546 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEDDA1CE1F5A77C9007FB546 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -77,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE2F57891F5C296C00F1D2F3 /* ObjectMapper.framework in Frameworks */,
 				CE2F577F1F5A8BF500F1D2F3 /* SwiftyJSON.framework in Frameworks */,
 				CE2F57811F5A8BF500F1D2F3 /* Alamofire.framework in Frameworks */,
 			);
@@ -102,6 +107,7 @@
 		CEDDA1BD1F5A77C9007FB546 = {
 			isa = PBXGroup;
 			children = (
+				CE2F57881F5C296C00F1D2F3 /* ObjectMapper.framework */,
 				CE2F577D1F5A8BF500F1D2F3 /* SwiftyJSON.framework */,
 				CE2F577E1F5A8BF500F1D2F3 /* Alamofire.framework */,
 				CEDDA1C81F5A77C9007FB546 /* WebAPIsList */,
@@ -293,6 +299,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+				"$(SRCROOT)/Carthage/Build?iOS/ObjectMapper.framework",
 			);
 			outputPaths = (
 			);

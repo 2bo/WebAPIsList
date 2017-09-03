@@ -10,24 +10,33 @@ import Foundation
 import UIKit
 import Alamofire
 import SwiftyJSON
+import ObjectMapper
 
 class QiitaStocksViewController: UITableViewController {
-    private var qiitaStocks: [QiitaStock] =
-        [ QiitaStock(title: "hoge", sendDate: "2017-08-30", beginDate: "2017-08-21", endDate: "2017-08-27"),
-            QiitaStock(title: "fuga", sendDate: "2017-08-30", beginDate: "2017-08-21", endDate: "2017-08-27"),
-            QiitaStock(title: "bar", sendDate: "2017-08-30", beginDate: "2017-08-21", endDate: "2017-08-27")]
+    private var qiitaStocks: [QiitaStock]?
+//        [ QiitaStock(title: "hoge", sendDate: "2017-08-30", beginDate: "2017-08-21", endDate: "2017-08-27"),
+//            QiitaStock(title: "fuga", sendDate: "2017-08-30", beginDate: "2017-08-21", endDate: "2017-08-27"),
+//            QiitaStock(title: "bar", sendDate: "2017-08-30", beginDate: "2017-08-21", endDate: "2017-08-27")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchQiitaStocksFromWebAPI()
+        //self.tableView.reloadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidLoad()
+//        fetchQiitaStocksFromWebAPI()
+//        self.tableView.reloadData()
     }
     
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-        let qiitaStock = qiitaStocks[indexPath.row]
-        cell.textLabel?.text = qiitaStock.title
-        print(qiitaStock.title)
+        
+        if let qiitaStock = qiitaStocks?[indexPath.row] {
+            cell.textLabel?.text = qiitaStock.title
+        }
         return cell
     }
     
@@ -36,14 +45,24 @@ class QiitaStocksViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return qiitaStocks.count
+        if let count = qiitaStocks?.count {
+            return count
+        } else {
+            return 0
+        }
     }
     
     func fetchQiitaStocksFromWebAPI (){
+        //QiitaのWebAPIにアクセス
         let url = "http://qiita-stock.info/api.json";
         Alamofire.request(url).responseJSON { response in
-           let json = JSON(response.result.value!)
-           print(json[0]["title"].stringValue)
+            //FIXME: エラー処理
+             guard let json = response.result.value else {
+                return
+            }
+            //JSONをオブジェクトにマッピング
+            self.qiitaStocks = Mapper<QiitaStock>().mapArray(JSONObject: json)
+            self.tableView.reloadData()
         }
     }
 }
