@@ -14,20 +14,20 @@ import ObjectMapper
 
 class QiitaStocksViewController: UITableViewController {
     private var qiitaStocks: [QiitaStock]?
-//        [ QiitaStock(title: "hoge", sendDate: "2017-08-30", beginDate: "2017-08-21", endDate: "2017-08-27"),
-//            QiitaStock(title: "fuga", sendDate: "2017-08-30", beginDate: "2017-08-21", endDate: "2017-08-27"),
-//            QiitaStock(title: "bar", sendDate: "2017-08-30", beginDate: "2017-08-21", endDate: "2017-08-27")]
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchQiitaStocksFromWebAPI()
-        //self.tableView.reloadData()
+        
+        //テーブルを下に引っ張るとデータを更新する。
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl?.attributedTitle = NSAttributedString(string: "loading")
+        self.refreshControl?.addTarget(self, action: #selector(fetchQiitaStocksFromWebAPI), for: UIControlEvents.valueChanged)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidLoad()
-//        fetchQiitaStocksFromWebAPI()
-//        self.tableView.reloadData()
     }
     
 
@@ -63,6 +63,7 @@ class QiitaStocksViewController: UITableViewController {
             //JSONをオブジェクトにマッピング
             self.qiitaStocks = Mapper<QiitaStock>().mapArray(JSONObject: json)
             self.tableView.reloadData()
+            self.refreshControl?.endRefreshing()
         }
     }
 }
