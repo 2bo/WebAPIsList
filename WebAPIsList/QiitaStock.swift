@@ -14,16 +14,10 @@ class QiitaStock: Mappable {
     var sendDate: String?
     var beginDate: String?
     var endDate: String?
+    var links: [Link]?
     
     required init?(map: Map) {
         
-    }
-    
-    init(title: String, sendDate: String, beginDate: String, endDate: String){
-        self.title = title
-        self.sendDate = sendDate
-        self.beginDate = beginDate
-        self.endDate = endDate
     }
     
     func mapping(map: Map) {
@@ -32,5 +26,31 @@ class QiitaStock: Mappable {
         sendDate  <- map["send_date"]
         beginDate <- map["begin_date"]
         endDate   <- map["end_date"]
+        links     <- map["links"]
     }
 }
+
+struct Link: Mappable {
+    var rank: Int?
+    var title: String?
+    var stock: Int?
+    var author: String?
+    var url: String?
+    var isNew: Bool?
+    var icon: String?
+    
+    init?(map: Map){
+    
+    }
+    
+    mutating func mapping(map: Map) {
+        rank   <- map["rank"]
+        title  <- map["title"]
+        stock  <- map["stock"]
+        author <- map["author"]
+        url    <- map["url"]
+        isNew  <- map["is_new"]
+        icon   <- map["icon"]
+    }
+}
+

@@ -36,6 +36,7 @@ class QiitaStocksViewController: UITableViewController {
         
         if let qiitaStock = qiitaStocks?[indexPath.row] {
             cell.textLabel?.text = qiitaStock.title
+            cell.detailTextLabel?.text = qiitaStock.beginDate
         }
         return cell
     }
