@@ -26,13 +26,8 @@ class QiitaStocksViewController: UITableViewController {
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewDidLoad()
-    }
-    
-
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "QiitaStock", for: indexPath)
         
         if let qiitaStock = qiitaStocks?[indexPath.row] {
             cell.textLabel?.text = qiitaStock.title
@@ -52,6 +47,8 @@ class QiitaStocksViewController: UITableViewController {
             return 0
         }
     }
+    
+    //TODO: QiitaLinksViewControllerに値を渡して画面遷移する。
     
     func fetchQiitaStocksFromWebAPI (){
         //QiitaのWebAPIにアクセス

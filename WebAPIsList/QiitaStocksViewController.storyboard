@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="reuseIdentifier" textLabel="C1f-4v-rv0" detailTextLabel="q8o-Qk-EDt" style="IBUITableViewCellStyleSubtitle" id="Frk-CL-3wr">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="QiitaStock" textLabel="C1f-4v-rv0" detailTextLabel="q8o-Qk-EDt" style="IBUITableViewCellStyleSubtitle" id="Frk-CL-3wr">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Frk-CL-3wr" id="Sgm-Wo-uDv">
@@ -41,6 +41,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="HuV-az-er8" kind="show" identifier="toQiitaStocksViewController" id="rf8-Ze-VKo"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -50,12 +53,21 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="http://qiita-stock.info/api.json" id="VkI-sE-8w7"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="71S-jB-UYR">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2dW-y5-lDE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="457" y="-221"/>
+        </scene>
+        <!--QiitaLinksViewController-->
+        <scene sceneID="Gaf-os-9qR">
+            <objects>
+                <viewControllerPlaceholder storyboardName="QiitaLinksViewController" id="HuV-az-er8" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pSH-6o-XXA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1226" y="-222"/>
         </scene>
     </scenes>
 </document>
