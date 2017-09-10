@@ -10,14 +10,17 @@ import Foundation
 import ObjectMapper
 
 class QiitaStock: Mappable {
-    var title: String?
-    var sendDate: String?
-    var beginDate: String?
-    var endDate: String?
-    var links: [Link]?
+    var title: String? = ""
+    var sendDate: String? = ""
+    var beginDate: String? = ""
+    var endDate: String? = ""
+    var links: [Link]? = []
     
-    required init?(map: Map) {
-        
+    init(){
+    }
+    
+    required convenience init?(map: Map) {
+        self.init()
     }
     
     func mapping(map: Map) {

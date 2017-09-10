@@ -9,11 +9,12 @@
 import Foundation
 import UIKit
 import Alamofire
-import SwiftyJSON
 import ObjectMapper
 
 class QiitaStocksViewController: UITableViewController {
-    private var qiitaStocks: [QiitaStock]?
+    
+    private var qiitaStocks: [QiitaStock] = []
+    private var selectedStock: QiitaStock = QiitaStock()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,11 +30,21 @@ class QiitaStocksViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "QiitaStock", for: indexPath)
         
-        if let qiitaStock = qiitaStocks?[indexPath.row] {
-            cell.textLabel?.text = qiitaStock.title
-            cell.detailTextLabel?.text = qiitaStock.beginDate
-        }
+        let qiitaStock = qiitaStocks[indexPath.row]
+        cell.textLabel?.text = qiitaStock.title
+        cell.detailTextLabel?.text = qiitaStock.sendDate
+        
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        //TableViewのハイライトを解除する。これをしないとAppleの審査時にRejectされる。
+        tableView.deselectRow(at: indexPath, animated: false)
+    }
+    
+    override func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+        self.selectedStock = self.qiitaStocks[indexPath.row]
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -41,17 +52,19 @@ class QiitaStocksViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let count = qiitaStocks?.count {
-            return count
-        } else {
-            return 0
+            return self.qiitaStocks.count
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toQiitaLinksViewController" {
+            let qiitaLinksViewController = segue.destination as! QiitaLinksViewController
+            qiitaLinksViewController.qiitaStock = selectedStock
         }
     }
     
-    //TODO: QiitaLinksViewControllerに値を渡して画面遷移する。
-    
     func fetchQiitaStocksFromWebAPI (){
-        //QiitaのWebAPIにアクセス
+        //週刊QiitaのWebAPIにアクセス
         let url = "http://qiita-stock.info/api.json";
         Alamofire.request(url).responseJSON { response in
             //FIXME: エラー処理
@@ -59,7 +72,10 @@ class QiitaStocksViewController: UITableViewController {
                 return
             }
             //JSONをオブジェクトにマッピング
-            self.qiitaStocks = Mapper<QiitaStock>().mapArray(JSONObject: json)
+            guard let qiitaStocks = Mapper<QiitaStock>().mapArray(JSONObject: json) else{
+                return
+            }
+            self.qiitaStocks = qiitaStocks
             self.tableView.reloadData()
             self.refreshControl?.endRefreshing()
         }
